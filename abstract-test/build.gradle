@@ -1,0 +1,14 @@
+apply plugin: "java"
+
+dependencies {
+    compile libs['junit']
+    compile libs['spring-boot-starter-test']
+    compile(libs['javafaker']) {
+        exclude group: 'org.yaml'
+    }
+    compile libs['mybatis-spring-boot-starter']
+    compile libs['mybatis-spring-boot-starter-test']
+    compile libs['h2']
+    compile libs['spring-boot-starter']
+    compile libs['spring-boot-starter-web']
+}

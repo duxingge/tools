@@ -1,0 +1,53 @@
+apply plugin: 'maven-publish'
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+ext {
+    repositories {
+
+    }
+}
+
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId project.group
+//            artifactId project.name
+//            version 'WJX-' + project.version
+//            from components.java
+//
+//            //配置上传源码
+//            artifact sourceJar {
+//                classifier "sources"
+//            }
+//
+//        }
+//    }
+//    repositories {
+//        maven {
+//            credentials {
+//                //please set them in your ~/.gradle/gradle.properties
+//                username = nexusUsername
+//                password = nexusPassword
+//            }
+//            url = nexusUrl
+//        }
+//    }
+//}
+//
+//if (project.hasProperty("autoPublish")) {
+//    String usernamepassword = "${nexusUsername}:${nexusPassword}"
+//    String curl = 'curl -s -o /dev/null -I -w "%{http_code}" -u ' + usernamepassword + " " + nexusUrl + '/' + project.group.replace('.', '/') + '/' + project.name + '/' + version
+//    if (isMasterBranch) {
+//        curl += '/' + project.name + "-" + version + ".pom"
+//    } else {
+//        curl += '/maven-metadata.xml'
+//    }
+//    String statusCode = curl.execute().text.trim().replace("\"", "")
+//    println(curl + " returns status code " + statusCode)
+//    if (statusCode != '404') {
+//        gradle.startParameter.excludedTaskNames += "publish"
+//    }
+//}
+

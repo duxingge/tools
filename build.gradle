@@ -1,0 +1,17 @@
+apply plugin: "java"
+buildscript {
+}
+
+allprojects {
+    group = 'com.ut.common'
+    apply from: "$rootDir/gradle/repositories.gradle"
+    apply from: "$rootDir/gradle/dependencies.gradle"
+//
+}
+
+subprojects {
+    dependencies {
+    }
+    apply from: "$rootDir/gradle/repositories.gradle"
+//    apply from: "$rootDir/gradle/publishing.gradle"
+}
